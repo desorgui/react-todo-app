@@ -1,23 +1,3 @@
-// import React, { useState } from "react"
-
-// const Navbar = () => {
-//   const [navbarOpen, setNavbarOpen] = useState(false);
-//   const handleToggle = () => {
-//     setNavbarOpen(!navbarOpen)
-//   }
-//   return (
-//     <nav className="navBar">
-//       <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button>
-//       <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-//         <li>Home</li>
-//         <li>About</li>
-//       </ul>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
-
 import React, { useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
@@ -51,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav className="navBar">
-      <button onClick={handleToggle}>
+      <button type="button" onClick={handleToggle}>
         {
           navbarOpen
             ? (

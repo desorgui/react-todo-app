@@ -5,7 +5,7 @@ import InputTodo from './InputTodo';
 import TodosList from './TodosList';
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState(getInitialTodos());
+  const [todos, setTodos] = useState(getInitialTodos()); // eslint-disable-line
 
   const handleChange = (id) => {
     setTodos((prevState) => prevState.map((todo) => {
@@ -38,24 +38,12 @@ const TodoContainer = () => {
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
-          todo.title = updatedTitle;
+          todo.title = updatedTitle; // eslint-disable-line
         }
         return todo;
       }),
     );
   };
-
-  // useEffect(() => {
-  //   console.log("test run")
-
-  //   // getting stored items
-  //   const temp = localStorage.getItem("todos")
-  //   const loadedTodos = JSON.parse(temp)
-
-  //   if (loadedTodos) {
-  //     setTodos(loadedTodos)
-  //   }
-  // }, []);
 
   function getInitialTodos() {
     // getting stored items
