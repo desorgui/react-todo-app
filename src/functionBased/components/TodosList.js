@@ -22,7 +22,7 @@ TodosList.propTypes = {
   handleChangeProps: PropTypes.func.isRequired,
   deleteTodoProps: PropTypes.func.isRequired,
   setUpdate: PropTypes.func.isRequired,
-  todos: PropTypes.string.isRequired,
+  todos: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default TodosList;
