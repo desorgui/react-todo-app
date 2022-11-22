@@ -32,7 +32,7 @@ body {
   text-align: center;
   margin-bottom: 0.5rem;
   line-height: 1em;
-  color: #ececec;
+  color: #b6b6b6;
   text-transform: lowercase;
   text-align: center;
 }
@@ -45,27 +45,44 @@ body {
   border-radius: calc(0.5 * 100px);
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
   justify-content: space-evenly;
+  height: 100vh;
 }
 
 .input-text {
   font-size: 1rem;
   font-weight: 400;
-  width: 85%;
+  width: 100%;
   padding-right: 5px;
   padding-left: 10px;
-  border-radius: calc(0.5 * 100px);
 }
 
-.input-text::placeholder {
-  color: #000;
+textarea {
+  font-size: 1rem;
+  font-weight: 400;
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  border: none;
+  outline: none;
+  height: 1;
+  flex-grow: 1;
+}
+
+::placeholder,
+::-ms-input-placeholder  {
+  color: #999;
 }
 
 .input-submit {
-  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
   color: #5b5b5b;
+  background-color: transparent;
   text-transform: capitalize;
   cursor: pointer;
   font-weight: 600;
+  font-size: 1.5em;
   margin-right: 10px;
 }
 
@@ -114,7 +131,6 @@ li {
   padding: 10px 40px;
   text-decoration: none;
   color: #050505;
-  text-transform: uppercase;
   font-weight: bold;
 }
 
@@ -130,6 +146,49 @@ li {
   margin-top: 30px;
 }
 
+.addTodo {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 98);
+  color: #fff;
+  border: none;
+  font-size: 2em;
+  display: flex;
+  cursor: pointer;
+}
+
+.popup-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.close-popup {
+  background: transparent;
+  display: flex;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
 /* media queries */
 
 @media screen and (min-width: 768px) {
@@ -139,11 +198,6 @@ li {
 
   .header {
     font-size: 6rem;
-    font-weight: 600;
     margin-bottom: 2rem;
-    line-height: 1em;
-    color: #ececec;
-    text-transform: lowercase;
-    text-align: center;
   }
 }

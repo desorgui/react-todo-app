@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FiTrash2 } from 'react-icons/fi';
 import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
@@ -17,8 +18,7 @@ const TodoItem = (props) => {
 
   const completedStyle = {
     fontStyle: 'italic',
-    color: '#595959',
-    opacity: 0.4,
+    opacity: 0.5,
     textDecoration: 'line-through',
   };
 
@@ -45,7 +45,9 @@ const TodoItem = (props) => {
           checked={completed}
           onChange={() => handleChangeProps(id)}
         />
-        <button type="button" onClick={() => deleteTodoProps(id)}>Delete</button>
+        { completed && (
+          <button type="button" aria-label="delete" onClick={() => deleteTodoProps(id)}><FiTrash2 /></button>
+        )}
         <span style={completed ? completedStyle : null}>{title}</span>
       </div>
       <input

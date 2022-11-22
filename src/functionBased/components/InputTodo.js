@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FiCheck } from 'react-icons/fi';
 
 const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
@@ -30,7 +31,7 @@ const InputTodo = (props) => {
       <input
         type="text"
         className="input-text"
-        placeholder="Add todo..."
+        placeholder="Task title..."
         value={inputText.title}
         name="title"
         onChange={onChange}
@@ -40,11 +41,11 @@ const InputTodo = (props) => {
         id="description"
         cols="30"
         rows="10"
-        placeholder="Add description..."
+        placeholder="Task description..."
         value={inputText.description}
         onChange={onChange}
       />
-      <button type="submit" className="input-submit">Submit</button>
+      <button type="submit" aria-label="submit" className="input-submit"><FiCheck /></button>
     </form>
   );
 };

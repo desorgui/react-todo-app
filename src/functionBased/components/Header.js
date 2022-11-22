@@ -7,7 +7,7 @@ const Header = () => {
   };
   return (
     <header style={headerStyle}>
-      <h1 className="header">Todos</h1>
+      <h1 className="header">Tasks list</h1>
     </header>
   );
 };
