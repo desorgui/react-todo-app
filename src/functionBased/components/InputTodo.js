@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
     title: '',
+    description: '',
   });
 
   const onChange = (e) => {
@@ -16,9 +17,10 @@ const InputTodo = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputText.title.trim()) {
-      addTodoProps(inputText.title);
+      addTodoProps(inputText.title, inputText.description);
       setInputText({
         title: '',
+        description: '',
       });
     }
   };
@@ -33,7 +35,16 @@ const InputTodo = (props) => {
         name="title"
         onChange={onChange}
       />
-      <button type="button" className="input-submit">Submit</button>
+      <textarea
+        name="description"
+        id="description"
+        cols="30"
+        rows="10"
+        placeholder="Add description..."
+        value={inputText.description}
+        onChange={onChange}
+      />
+      <button type="submit" className="input-submit">Submit</button>
     </form>
   );
 };

@@ -68,7 +68,7 @@ TodoItem.propTypes = {
   handleChangeProps: PropTypes.func.isRequired,
   deleteTodoProps: PropTypes.func.isRequired,
   setUpdate: PropTypes.func.isRequired,
-  todo: PropTypes.string.isRequired,
+  todo: PropTypes.PropTypes.instanceOf(Object).isRequired,
 };
 
 export default TodoItem;

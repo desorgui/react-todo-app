@@ -5,7 +5,7 @@ import './functionBased/App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import TodoContainer from './functionBased/components/TodoContainer';
 import About from './functionBased/pages/About';
-import Navbar from './functionBased/components/Navbar';
+// import Navbar from './functionBased/components/Navbar';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<TodoContainer />} />
         <Route path="/about" element={<About />} />
