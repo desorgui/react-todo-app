@@ -38,13 +38,16 @@ const TodoItem = (props) => {
 
   return (
     <li className={styles.item}>
-      <div onDoubleClick={handleEditing} style={viewMode}>
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          checked={completed}
-          onChange={() => handleChangeProps(id)}
-        />
+      <div onDoubleClick={handleEditing} className="item" style={viewMode}>
+        <label> {/* eslint-disable-line */}
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            checked={completed}
+            onChange={() => handleChangeProps(id)}
+          />
+          <span className="checkbox" />
+        </label>
         { completed && (
           <button type="button" aria-label="delete" onClick={() => deleteTodoProps(id)}><FiTrash2 /></button>
         )}
