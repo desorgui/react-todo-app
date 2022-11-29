@@ -5,14 +5,14 @@
   margin-bottom: 0.5rem;
   background-color: #0a155a;
   border-radius: 1rem;
-  color:#f1f3f4;
+  color: #f1f3f4;
   width: 100%;
 }
 
 /* .item span {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
   overflow: hidden;
 } */
 
@@ -21,7 +21,6 @@
 }
 
 .item button {
-  font-size: 13px;
   background: transparent;
   color: #ff0062;
   font-size: 1em;
@@ -35,7 +34,7 @@
 }
 
 .textInput {
-  width: 100%;
+  width: calc(100% - 20px);
   padding: 10px;
   border: 1px solid #dfdfdf;
 }

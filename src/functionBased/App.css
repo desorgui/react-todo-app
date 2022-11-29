@@ -35,7 +35,6 @@ body {
   line-height: 1em;
   color: #b6b6b6;
   text-transform: lowercase;
-  text-align: center;
 }
 
 .form-container {
@@ -65,12 +64,11 @@ textarea {
   resize: none;
   border: none;
   outline: none;
-  height: 1;
   flex-grow: 1;
 }
 
 ::placeholder,
-::-ms-input-placeholder  {
+::-ms-input-placeholder {
   color: #999;
 }
 
@@ -111,6 +109,15 @@ input {
   transform: scale(0);
 }
 
+.checkbox {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: 2px solid #999;
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0, 0.01, 0.23, 0.8);
+}
+
 input:checked ~ .checkbox {
   transform: rotate(45deg);
   width: 20px;
@@ -120,15 +127,6 @@ input:checked ~ .checkbox {
   border-top-color: transparent;
   border-left-color: transparent;
   border-radius: 0;
-}
-
-.checkbox {
-  display: block;
-  width: inherit;
-  height: inherit;
-  border: 2px solid #999;
-  border-radius: 4px;
-  transition: all 0.2s cubic-bezier(0, 0.01, 0.23, 0.8);
 }
 
 /* sidebar Nav */
@@ -233,6 +231,7 @@ li {
   .container {
     max-width: 600px;
   }
+
   .inner {
     padding: 8rem 10px 4rem;
   }
