@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FiTrash2 } from 'react-icons/fi';
 import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
@@ -17,8 +18,7 @@ const TodoItem = (props) => {
 
   const completedStyle = {
     fontStyle: 'italic',
-    color: '#595959',
-    opacity: 0.4,
+    opacity: 0.5,
     textDecoration: 'line-through',
   };
 
@@ -38,14 +38,19 @@ const TodoItem = (props) => {
 
   return (
     <li className={styles.item}>
-      <div onDoubleClick={handleEditing} style={viewMode}>
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          checked={completed}
-          onChange={() => handleChangeProps(id)}
-        />
-        <button type="button" onClick={() => deleteTodoProps(id)}>Delete</button>
+      <div onDoubleClick={handleEditing} className="item" style={viewMode}>
+        <label> {/* eslint-disable-line */}
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            checked={completed}
+            onChange={() => handleChangeProps(id)}
+          />
+          <span className="checkbox" />
+        </label>
+        { completed && (
+          <button type="button" aria-label="delete" onClick={() => deleteTodoProps(id)}><FiTrash2 /></button>
+        )}
         <span style={completed ? completedStyle : null}>{title}</span>
       </div>
       <input

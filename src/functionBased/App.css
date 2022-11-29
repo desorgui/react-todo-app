@@ -14,10 +14,11 @@ body {
 
 .container {
   display: flex;
+  position: relative;
+  min-height: 100vh;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  max-width: 600px;
+  max-width: 100vw;
   margin: 0 auto;
 }
 
@@ -27,14 +28,13 @@ body {
 }
 
 .header {
-  font-size: 2rem;
+  font-size: 2.5em;
   font-weight: 600;
   text-align: center;
   margin-bottom: 0.5rem;
   line-height: 1em;
-  color: #ececec;
+  color: #b6b6b6;
   text-transform: lowercase;
-  text-align: center;
 }
 
 .form-container {
@@ -45,27 +45,43 @@ body {
   border-radius: calc(0.5 * 100px);
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
   justify-content: space-evenly;
+  height: 100vh;
 }
 
 .input-text {
   font-size: 1rem;
   font-weight: 400;
-  width: 85%;
+  width: 100%;
   padding-right: 5px;
   padding-left: 10px;
-  border-radius: calc(0.5 * 100px);
 }
 
-.input-text::placeholder {
-  color: #000;
+textarea {
+  font-size: 1rem;
+  font-weight: 400;
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+}
+
+::placeholder,
+::-ms-input-placeholder {
+  color: #999;
 }
 
 .input-submit {
-  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
   color: #5b5b5b;
+  background-color: transparent;
   text-transform: capitalize;
   cursor: pointer;
   font-weight: 600;
+  font-size: 1.5em;
   margin-right: 10px;
 }
 
@@ -74,6 +90,43 @@ body {
   height: 45px;
   outline: none;
   border: none;
+}
+
+/* Checkbox */
+
+.item label {
+  display: flex;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  float: left;
+}
+
+input {
+  position: absolute;
+  left: 0;
+  transform: scale(0);
+}
+
+.checkbox {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: 2px solid #999;
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0, 0.01, 0.23, 0.8);
+}
+
+input:checked ~ .checkbox {
+  transform: rotate(45deg);
+  width: 20px;
+  margin: -5px 7px 0 8px;
+  border-color: #24c78e;
+  border-width: 4px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
 }
 
 /* sidebar Nav */
@@ -114,7 +167,6 @@ li {
   padding: 10px 40px;
   text-decoration: none;
   color: #050505;
-  text-transform: uppercase;
   font-weight: bold;
 }
 
@@ -130,20 +182,62 @@ li {
   margin-top: 30px;
 }
 
+.addTodo {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 98);
+  color: #fff;
+  border: none;
+  font-size: 2em;
+  display: flex;
+  cursor: pointer;
+}
+
+.popup-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.close-popup {
+  background: transparent;
+  display: flex;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
 /* media queries */
 
 @media screen and (min-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+
   .inner {
     padding: 8rem 10px 4rem;
   }
 
   .header {
     font-size: 6rem;
-    font-weight: 600;
     margin-bottom: 2rem;
-    line-height: 1em;
-    color: #ececec;
-    text-transform: lowercase;
-    text-align: center;
   }
 }
