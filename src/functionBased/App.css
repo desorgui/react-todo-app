@@ -103,7 +103,7 @@ textarea {
   float: left;
 }
 
-input {
+input[type="checkbox"] {
   position: absolute;
   left: 0;
   transform: scale(0);
@@ -204,6 +204,7 @@ li {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
