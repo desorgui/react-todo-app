@@ -28,6 +28,7 @@ const InputTodo = (props) => {
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
+      <h2 className="popup-title">New task</h2>
       <input
         type="text"
         className="input-text"
